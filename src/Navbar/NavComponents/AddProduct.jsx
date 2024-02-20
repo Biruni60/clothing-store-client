@@ -20,15 +20,16 @@ const AddProduct = () => {
         }); 
         if(res.data.success){
             const addClass={
-                title:data.title,
                 name:data.name,
-                email:data.email,
+                type:data.type,
                 price:data.price,
+                rating:data.rating,
+                brand:data.brand,
                 description:data.description,
                 image:res.data.data.display_url,
-                isPending:"pending"
+              
             }
-            const classes=await axiosPublic.post('/classes',addClass)
+            const classes=await axiosPublic.post('/addproducts',addClass)
             if(classes.data.insertedId){
                 // show success popup
                 reset();
@@ -39,7 +40,7 @@ const AddProduct = () => {
                     showConfirmButton: false,
                     timer: 1500
                   });
-                //   navigate('/dashboard/myclasses')
+                  navigate('/')
             }
            
         }
