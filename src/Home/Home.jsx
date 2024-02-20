@@ -1,4 +1,5 @@
 import Collection from "./Collection";
+import AllProducts from "./Home Components/AllProducts";
 import Banner from "./Home Components/Banner";
 import Category from "./Home Components/Category";
 import ContactUs from "./Home Components/ContactUs";
@@ -14,6 +15,7 @@ const Home = () => {
         <Collection></Collection> 
       
        <Category></Category>
+       <AllProducts></AllProducts>
        <ContactUs></ContactUs>
        <Review></Review>
        <OfflineShops></OfflineShops>
