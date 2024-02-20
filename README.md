@@ -1,8 +1,11 @@
-# React + Vite
+Fetures:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1.User can Add products.
 
-Currently, two official plugins are available:
+2.User can see Product Details.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+3.User can update Products.
+
+4.User can add Product to their cart.
+
+5. User can see Featured or most reviewed products

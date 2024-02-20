@@ -11,7 +11,7 @@ logOut()
     const links= <>
        <NavLink to="/"><li><a>HOME</a></li></NavLink>
        <NavLink to="/addproduct"><li><a>ADD PRODUCT</a></li></NavLink>
-       <NavLink to="/"><li><a>MY CART</a></li></NavLink>
+       <NavLink to="/mycart"><li><a>MY CART</a></li></NavLink>
     </>
     return (
         <div className="navbar bg-base-300 text-yellow-600">

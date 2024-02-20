@@ -2,12 +2,18 @@
 import { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../AuthProvider";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+    const location=useLocation()
+    const navigate=useNavigate()
     const{googleSignIn}=useContext(AuthContext)
 const handleLogIn=()=>{
 googleSignIn()
-.then(result=>console.log(result))
+.then(result=>{
+    console.log(result);
+    navigate(location.state? location.state:"/")
+})
 .catch(error=>console.log(error.message))
 
 }

@@ -1,15 +1,14 @@
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useAxiosPublic from "../../HOOKS/useAxiosPublic";
 import useAxiosUpload from "../../HOOKS/useAxiosUpload";
 
-
-const AddProduct = () => {
+const UpdareProduct = () => {
     const { register, handleSubmit, reset } = useForm();
     const axiosPublic=useAxiosPublic()
     const axiosUpload=useAxiosUpload()
-
+    const {id} =useParams()
     const navigate=useNavigate()
     const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
     const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
@@ -31,18 +30,18 @@ const AddProduct = () => {
                 image:res.data.data.display_url,
               
             }
-            const classes=await axiosPublic.post('/addproducts',addClass)
-            if(classes.data.insertedId){
+            const classes=await axiosPublic.put(`/products/${id}`,addClass)
+            if(classes.data.modifiedCount>0){
                 // show success popup
                 reset();
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: `${data.name} is added to the products.`,
+                    title: `${data.name} is updated.`,
                     showConfirmButton: false,
                     timer: 1500
                   });
-                  navigate('/')
+                  navigate('/mycart')
             }
            
         }
@@ -122,7 +121,7 @@ const AddProduct = () => {
                     </div>
 
                     <button className="btn btn-outline w-full">
-                        Add Product
+                        Update Product
                     </button>
                 </form>
             </div>
@@ -131,4 +130,4 @@ const AddProduct = () => {
     );
 };
 
-export default AddProduct;
+export default UpdareProduct;

@@ -14,6 +14,9 @@ import AddProduct from './Navbar/NavComponents/AddProduct';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import ProductDetail from './Home/Home Components/ProductDetail';
 import SignIn from './SignIn/SignIn';
+import MyCart from './Navbar/NavComponents/MyCart';
+import UpdareProduct from './Navbar/NavComponents/UpdareProduct';
+import PrivateRoute from './PrivateRoute';
 
 
 const router = createBrowserRouter([
@@ -28,11 +31,19 @@ const router = createBrowserRouter([
       },
       {
        path:"/addproduct",
-       element:<AddProduct></AddProduct>
+       element:<PrivateRoute><AddProduct></AddProduct></PrivateRoute>
+      },
+      {
+       path:"/mycart",
+       element:<PrivateRoute><MyCart></MyCart></PrivateRoute>
       },
      {
       path:"/productdetail/:id",
-      element:<ProductDetail></ProductDetail>
+      element:<PrivateRoute><ProductDetail></ProductDetail></PrivateRoute>
+     },
+     {
+      path:"/updateproduct/:id",
+      element:<UpdareProduct></UpdareProduct>
      },
      {
       path:"/signin",
