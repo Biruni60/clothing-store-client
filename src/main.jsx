@@ -13,6 +13,7 @@ import AuthProvider from './AuthProvider';
 import AddProduct from './Navbar/NavComponents/AddProduct';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import ProductDetail from './Home/Home Components/ProductDetail';
+import SignIn from './SignIn/SignIn';
 
 
 const router = createBrowserRouter([
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
      {
       path:"/productdetail/:id",
       element:<ProductDetail></ProductDetail>
+     },
+     {
+      path:"/signin",
+      element:<SignIn></SignIn>
      }
     ]
   },
