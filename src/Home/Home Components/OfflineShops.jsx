@@ -3,7 +3,7 @@
 const OfflineShops = () => {
     return (
         <div className="my-10" >
-        <h2 className="text-center text-yellow-600 my-10 text-3xl font-semibold">OFFLINE SHOPS</h2>
+        <h2 className="text-center text-yellow-600 my-20 text-3xl ">---OFFLINE SHOPS---</h2>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 text-center"  >
              
              <div className="card p-10 bg-base-100 shadow-xl">
